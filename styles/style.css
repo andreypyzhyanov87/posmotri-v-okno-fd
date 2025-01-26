@@ -80,12 +80,6 @@ ol {
   grid-area: footer;
 }
 
-.search-form {
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-}
-
 .content__list-container {
   position: relative;
   height: 298px;
