@@ -30,7 +30,10 @@ p,
 ul,
 ol,
 li,
-blockquote,
+blockquote {
+  font-family: 'Fira Sans Condensed', sans-serif; 
+}
+
 fieldset {
   margin: 0;
   padding: 0;
@@ -43,7 +46,7 @@ ol {
 
 /* Кастомный скроллбар */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 4px;
+  inline-size: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
@@ -60,8 +63,8 @@ ol {
   gap: 30px;
   justify-items: center;
   align-items: end;
-  width: 100%;
-  max-width: 1140px;
+  inline-size: 100%;
+  max-inline-size: 1140px;
 }
 
 .main {
@@ -82,32 +85,34 @@ ol {
 
 .content__list-container {
   position: relative;
-  height: 298px;
+  block-size: 298px;
   overflow-y: auto;
 }
 
 .content__details {
-  width: 100%;
+  inline-size: 100%;
   box-sizing: border-box;
   margin: 0 auto;
 }
 
 .result__video-container {
   position: relative;
-  margin-bottom: 16px;
-  width: 711px;
-  height: 386px;
+  margin-block-end: 16px;
+  inline-size: 711px;
+  block-size: 386px;
 }
 
 .result__video {
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
 }
 
 .content__list {
   display: grid;
   gap: 30px;
+  padding-inline-start: 0;
+  margin-block-start: 0;
 }
 
 .content__video-card {
@@ -117,8 +122,8 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
-  height: 103px;
+  inline-size: 194px;
+  block-size: 103px;
   object-fit: cover;
   object-position: center;
 }
@@ -130,39 +135,32 @@ ol {
 }
 
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif; 
   font-size: 18px;
   font-weight: 400;
-  line-height: 1.34375em;
+  line-height: 21.5px;
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  margin-bottom: 5px;
+  margin-block-end: 5px;
+  margin-block-start: 0;
 }
 
 .title {
-  font-family: Oswald;
+  font-family: 'Oswald', Arial, sans-serif;
   font-size: 75px;
   font-weight: 700;
-  line-height: 4,40625em;
+  line-height: 70.5px;
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   text-transform: uppercase;
-  margin-bottom: 26px;
-  margin-top: 8px;
+  margin-block-end: 26px;
+  margin-block-start: 12px;
 }
 
 .content__accent {
-  font-family: Oswald;
-  font-size: 75px;
-  font-weight: 700;
-  line-height: 4,40625em;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
   color: #545050;
-  text-transform: uppercase;
 }
 
 .visually-hidden {
@@ -189,8 +187,8 @@ ol {
 .search-form__label {
   display: flex;
   align-items: center;
-  width: fit-content;
-  font-family: Fira Sans Condensed;
+  inline-size: fit-content;
+  font-family: 'Fira Sans Condensed', sans-serif; 
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -209,15 +207,17 @@ ol {
   box-sizing: border-box;
   outline-offset: 1px;
 }
+
 .search-form__textfield {
-  width: 225px;
-  height: 27px;
-  border-top: 1px solid #FFFFFF;
-  border-bottom: 1px solid #FFFFFF;
-  border-left: none;
-  border-right: none;
+  inline-size: 225px;
+  block-size: 27px;
+  color: #FFFFFF;
+  border-block-start: 1px solid #FFFFFF;
+  border-block-end: 1px solid #FFFFFF;
+  border-inline-start: none;
+  border-inline-end: none;
   appearance: none;
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif; 
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -230,8 +230,8 @@ ol {
 
 .search-form__pseudo-checkbox {
   position: relative;
-  width: 19px;
-  height: 19px;
+  inline-size: 19px;
+  block-size: 19px;
   border: 1px solid #FFFFFF;
   margin-right: 5px;
   display: flex;
@@ -241,8 +241,8 @@ ol {
 
 .search-form__pseudo-checkbox::after {
   content: '';
-  width: 15px;
-  height: 15px;
+  inline-size: 15px;
+  block-size: 15px;
   background-color: transparent;
 }
 
@@ -277,7 +277,7 @@ ol {
   border: 1px solid #FFFFFF;
   background-color: transparent;
   color: #FFFFFF;
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif; 
   font-size: 18px;
   font-weight: 700;
   line-height: 21.6px;
@@ -288,23 +288,15 @@ ol {
 }
 
 .search-form__submit-button {
-  width: 194px;
-  height: 34px;
-  margin-top: auto;
-}
-
-.search-form__submit-button:focus {
-  outline: none;
+  inline-size: 194px;
+  block-size: 34px;
+  margin-block-start: auto;
 }
 
 .more-button {
-  width: 100%;
-  height: 34px;
-  margin-top: 30px;
-}
-
-.more-button:focus {
-  outline: none;
+  inline-size: 100%;
+  block-size: 34px;
+  margin-block-start: 30px;
 } 
 
 .button:hover {
@@ -318,6 +310,7 @@ ol {
 .button:focus {
   outline: 1px solid #FFFFFF;
   outline-offset: 1px;
+  outline: none;
 }
 
 .content__card-link_current {
@@ -332,26 +325,28 @@ ol {
 
 .content__video-card-title {
   text-align: left;
-  text-underline-position: from-font;
   text-decoration-skip-ink: none;
   color: #FFFFFF;
-  margin-bottom: 6px;
-  font-family: Oswald;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  font-family: 'Oswald', Arial, sans-serif;
   font-size: 30px;
   font-weight: 700;
-  line-height: 1,875em;
+  line-height: 30px;
   text-transform: uppercase;
   overflow: hidden;
   text-overflow: ellipsis;
+  inline-size: 196px;
 }
 
 .content__video-card-description {
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif; 
   font-size: 18px;
   font-weight: 400;
-  line-height: 1,0125em;
+  line-height: 16.2px;
   text-align: left;
-  text-underline-position: from-font;
+  margin-block-start: 5px;
+  margin-block-end: 0;
   text-decoration-skip-ink: none;
   color: #FFFFFF;
   display: -webkit-box;
@@ -361,8 +356,8 @@ ol {
   line-clamp: 3;
 }
 
-.content__video-card:hover .content__video-card-title,
-.content__video-card:hover .content__video-card-description {
+.content__card-link:hover .content__video-card-title,
+.content__card-link:hover .content__video-card-description {
   text-decoration: underline;
 }
 
@@ -370,11 +365,11 @@ ol {
   background-color: #545050;
 }
 
-.content__video-card:focus {
+.content__card-link:focus {
   outline: none
 }
 
-.content__video-card:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #FFFFFF;
 } 
 
